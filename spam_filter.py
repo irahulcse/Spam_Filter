@@ -12,7 +12,6 @@ from tkinter import messagebox
 from tkinter import *
 #%matplotlib inline
 
-root=Tk()
 #%%
 #loading the dataset in the mails
 mails=pd.read_csv('spam.csv',encoding='latin-1')
@@ -239,9 +238,6 @@ def alldonewithflyingcolors(pm):
         messagebox.showinfo("Good New",'It is a safe email')
 
 #%%
-def retrieve_input():
-    inputValue=textBox.get("1.0","end-1c")
-    print(inputValue)
 
 
 #%%
@@ -260,12 +256,6 @@ metrics(testData['label'],preds_bow)
 new='I cant pick the phone'
 pm=process_message(new)
 print(new)
-textBox=Text(root, height=6, width=100)
-textBox.pack()
-buttonCommit=Button(root, height=1, width=100, text="Commit", 
-                    command=lambda: retrieve_input())
-buttonCommit.pack()
-mainloop()
 messagebox.showerror("Gonna to Check this Prototype",new)
 alldonewithflyingcolors(pm)
 
