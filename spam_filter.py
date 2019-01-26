@@ -206,7 +206,7 @@ class SpamClassifier(object):
             processed_message = process_message(message)
             result[i] = int(self.classify(processed_message))
         return result
-    
+# Meina Name ist Rahul
 #%%
 def metrics(labels, predictions):
     true_pos, true_neg, false_pos, false_neg = 0, 0, 0, 0
