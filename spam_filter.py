@@ -2,6 +2,7 @@
 #UID:17BCS1811
 #Sophomore Computer Science Student
 #Chandigarh University
+#Run without the Jupyter Notebook
 
 #%%
 from nltk.tokenize import word_tokenize
