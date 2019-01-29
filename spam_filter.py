@@ -1,8 +1,9 @@
-#Created by Rahul Chandra
-#UID:17BCS1811
+
+#Rahul Chandra and Arindam Bagchi
+#UID:17BCS1811 and 17BCS1780
 #Sophomore Computer Science Student
 #Chandigarh University
-#Run without the Jupyter Notebook
+#Cannot be Run without the Jupyter Notebook
 
 #%%
 from nltk.tokenize import word_tokenize
@@ -15,7 +16,6 @@ import pandas as pd
 import numpy as np 
 import tkinter
 from tkinter import messagebox
-from tkinter import *
 #%matplotlib inline
 
 #%%
@@ -123,7 +123,7 @@ class SpamClassifier(object):
             self.calc_prob()
 
     def calc_prob(self):
-        self.prob_spam = dict()
+        self.prob_spam =dict()
         self.prob_ham = dict()
         for word in self.tf_spam:
             self.prob_spam[word] = (self.tf_spam[word] + 1) / (self.spam_words + \
@@ -234,15 +234,18 @@ def metrics(labels, predictions):
 root = tkinter.Tk()
 root.withdraw()
 #%%
-def alldonewithflyingcolors(pm):
+def alldonewithflyingcolors(pm,new):
     if sc_tf_idf.classify(pm)==True:
         #ctypes.windll.user32.MessageBoxW(0,'Alert')
         # print('AlertIt is a spam email')
         #tkMessageBox.showinfo('alert')
-        messagebox.showwarning("Alert","Spam Email")
+        messagebox.showwarning("Message Passed to Spam Filter Model",message=new)
+        messagebox.showerror("Alert",message="Answer==Spam Email")
+        #messagebox.ABORT()
     else:
-        messagebox.showinfo("Good New",'It is a safe email')
-
+        messagebox.showwarning("Message Passed to Spam Filter Model",message=new)
+        messagebox.showinfo("Good News",message="Answer==Good Email")
+        #messagebox.showinfo("Message Passed to Spam Filter is",message="Message Passed=="+new+"\nAnwer==Good Email")
 #%%
 
 
@@ -261,26 +264,32 @@ metrics(testData['label'],preds_bow)
 #now we will be going to check our result and the preidctions which had beeen formed through the given word
 new='I cant pick the phone'
 pm=process_message(new)
-print(new)
-messagebox.showerror("Gonna to Check this Prototype",new)
-alldonewithflyingcolors(pm)
+#print(new)
+#messagebox.showerror("Gonna to Check this Prototype",new)
+alldonewithflyingcolors(pm,new)
 
 #%%
-pm=process_message('Congratulations you are awarded $500')
-alldonewithflyingcolors(pm)
+new='Congratulations you are awarded $500'
+pm=process_message(new)
+alldonewithflyingcolors(pm,new)
 
 #%%
-pm=process_message('It is a new spam message')
-alldonewithflyingcolors(pm)
+new='Its is a new spam message'
+pm=process_message(new)
+alldonewithflyingcolors(pm,new)
 #%%
-pm=process_message('Thanks for your subscription to Ringtone UK your mobile will be charged �5/month Please confirm by replying YES or NO. If you reply NO you will not be charged,,,')
-alldonewithflyingcolors(pm)
+new='Thanks for your subscription to Ringtone UK your mobile will be charged �5/month Please confirm by replying YES or NO. If you reply NO you will not be charged,,,'
+pm=process_message(new)
+alldonewithflyingcolors(pm,new)
 #%%
-pm=process_message('This msg is for your mobile content order It has been resent as previous attempt failed due to network error Queries to customersqueries@netvision.uk.com,,,')
-alldonewithflyingcolors(pm)
+new='This msg is for your mobile content order It has been resent as previous attempt failed due to network error Queries to customersqueries@netvision.uk.com,,,'
+pm=process_message(new)
+alldonewithflyingcolors(pm,new)
 #%%
-pm=process_message('Money reward $500')
-alldonewithflyingcolors(pm)
+new='Money reward $500'
+pm=process_message(new)
+alldonewithflyingcolors(pm,new)
 #%%
-pm=process_message('The current leading bidding is')
-alldonewithflyingcolors(pm)
+new='The current leading bidding is'
+pm=process_message(new)
+alldonewithflyingcolors(pm,new)
