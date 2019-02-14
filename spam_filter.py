@@ -259,20 +259,19 @@ sc_bow=SpamClassifier(trainData,'bow')
 sc_bow.train()
 preds_bow=sc_bow.predict(testData['message'])
 metrics(testData['label'],preds_bow)
-
 #%%
 #now we will be going to check our result and the preidctions which had beeen formed through the given word
 new='I cant pick the phone'
 pm=process_message(new)
+print("The new message in the dataset"+pm)
 #print(new)
 #messagebox.showerror("Gonna to Check this Prototype",new)
 alldonewithflyingcolors(pm,new)
-
 #%%
 new='Congratulations you are awarded $500'
 pm=process_message(new)
+print(pm)
 alldonewithflyingcolors(pm,new)
-
 #%%
 new='Its is a new spam message'
 pm=process_message(new)
@@ -290,6 +289,10 @@ new='Money reward $500'
 pm=process_message(new)
 alldonewithflyingcolors(pm,new)
 #%%
-new='The current leading bidding is'
+new='I am giving you 500$'
+pm=process_message(new)
+alldonewithflyingcolors(pm,new)
+#%%
+new='I am Rahul Chandra going to give you 500$ as a credit '
 pm=process_message(new)
 alldonewithflyingcolors(pm,new)
