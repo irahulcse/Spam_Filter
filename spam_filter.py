@@ -1,8 +1,3 @@
-#Rahul Chandra and Arindam Bagchi
-#UID:17BCS1811 and 17BCS1780
-#Sophomore Computer Science Student
-#Chandigarh University
-#Cannot be Run without the Jupyter Notebook
 
 #%% [markdown]
 # # Spam Filter In Python3 
